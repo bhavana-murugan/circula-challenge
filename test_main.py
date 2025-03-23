@@ -1,7 +1,7 @@
 """
 Includes automated tests for some of the main checks from task 1.
 Using dummy creds and signing up process is set up as a fixture in conftest.py to save time.
-Automated cases: TC01, TC02, TC04, TC05, TC06, TC07, TC09, TC12, TC14, TC25
+Automated cases: TC01, TC02, TC04, TC05, TC06, TC07, TC09, TC12, TC14, TC24
 Dependencies: playwright
 Author: Bhavana Murugan
 Date: March 23, 2025
