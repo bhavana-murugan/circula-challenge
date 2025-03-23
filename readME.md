@@ -1,13 +1,15 @@
-# Run commands
+# To run locally run the following commands
+> You can also use `pip` or `poetry`, if you wish to not use `uv`.
 ```
 brew install uv
-uv init
 
-uv add playwright pytest
-.venv/bin/playwright install
-.venv/bin/pytest test_main.py -vs   
+cd circula-challenge
 
-git status
-git add .
-git commit -m ""
+git clone https://github.com/bhavana-murugan/circula-challenge.git
+
+uv sync
+
+.venv/bin/pytest test_main.py -v
 ```
+
+
