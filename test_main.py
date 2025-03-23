@@ -1,6 +1,7 @@
 """
 Includes automated tests for some of the main checks from task 1.
 Using dummy creds and signing up process is set up as a fixture in conftest.py to save time.
+Automated cases: TC01, TC02, TC04, TC05, TC06, TC07, TC09, TC12, TC14, TC25
 Dependencies: playwright
 Author: Bhavana Murugan
 Date: March 23, 2025
@@ -11,8 +12,7 @@ from playwright.sync_api import sync_playwright , expect
 
 def test_one(info_page): 
     """
-    - Verify sweden is listed in country dropdown page and selecting it updates the field
-    - Verify alphabetical order
+    - TC01, TC02, TC04, TC14
     """
     
     page = info_page
@@ -35,7 +35,7 @@ def test_one(info_page):
 
 def test_two(info_page):
     """
-    - Verify that selecting nothing in the field should display the error “Company registration country is required” and CTA disabled dynamically.
+    - TC05, TC06
     """ 
     
     page = info_page
@@ -50,9 +50,7 @@ def test_two(info_page):
     
 def test_three(info_page):
     """
-    - Verify form submitted successfully after selecting Sweden
-    - Verify user data retention after clicking back(caching)
-    - Verify hdyhau works as expected after selecting Sweden
+    - TC07, TC09, TC12
     """ 
     
     page = info_page
