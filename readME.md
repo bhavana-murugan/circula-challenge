@@ -3,9 +3,9 @@
 ```
 brew install uv
 
-cd circula-challenge
-
 git clone https://github.com/bhavana-murugan/circula-challenge.git
+
+cd circula-challenge
 
 uv sync
 
