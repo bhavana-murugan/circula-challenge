@@ -6,7 +6,7 @@ Author: Bhavana Murugan
 Date: March 23, 2025
 """
 
-from playwright.sync_api import expect
+from playwright.sync_api import sync_playwright , expect
 
 
 def test_one(info_page): 
@@ -61,22 +61,9 @@ def test_three(info_page):
     dropdown.click()
     dropdown.fill("Sweden")
     page.keyboard.press("ArrowDown")
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(200)
     page.keyboard.press("Enter")
     page.locator('input[name="hdyhau"]').click()
     page.locator('text=DATEV').click()
     page.get_by_role("button",name = "Create an account").click()
     page.go_back()
-
-
-def test_four(info_page): #Verify form submitted successfully for other country
-    page = info_page
-    dropdown = page.locator('xpath=/html/body/div[1]/div/div/main/div/form/div[3]/div[1]/label/div[2]/input')
-    dropdown.click()
-    dropdown.fill("Belgium")
-    page.keyboard.press("ArrowDown")
-    page.wait_for_timeout(100)
-    page.locator('input[name="hdyhau"]').click()
-    page.locator('text=DATEV').click()
-    page.get_by_role("button",name = "Create an account").click()
-

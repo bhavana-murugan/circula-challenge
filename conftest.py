@@ -9,7 +9,7 @@ import pytest
 from playwright.sync_api import sync_playwright
 from faker import Faker
 
-@pytest.fixture(scope="function", params=["firefox", "webkit", "chromium"])
+@pytest.fixture(scope="module", params=["firefox", "webkit", "chromium"])
 def browser(request):
     browser_type = request.param  # Get the browser type from the parameter
     with sync_playwright() as p:
@@ -19,13 +19,13 @@ def browser(request):
         browser.close()
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def context(browser):
     context = browser.new_context(viewport=None)
     yield context
     context.close()
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def info_page(context):
     fake = Faker()
     page = context.new_page()
@@ -54,4 +54,8 @@ def info_page(context):
 
 
     page.close()
+
+
+
+
 
